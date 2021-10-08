@@ -41,7 +41,7 @@ function newImageResponse( svg ) {
   event.waitUntil(
     caches.open( VERSION ).then(function(cache) {
       return cache.addAll([
-        "/css/main.css",
+        "/static/places.json",
         "/js/main.js",
         OFFLINE_PAGE
       ]);
@@ -103,10 +103,10 @@ self.addEventListener( "fetch", function( event ){
     );
   }
 
-  // CSS & JavaScript - Cache first
-  else if ( /\.css$/.test(url) || /\.js$/.test(url) )
+  // JSON & JavaScript - Cache first
+  else if ( /\.json$/.test(url) || /\.js$/.test(url) )
   {
-    console.log("CSS or JavaScript request", url);
+    console.log("JSON or JavaScript request", url);
     event.respondWith(
       caches.match( request )
         .then( cached_result => {

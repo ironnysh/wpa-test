@@ -3,16 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>PWA Demo</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <style>
+    body {
+		  margin: 0;
+		  padding: 1rem;
+		}
+    </style>
     <link rel="manifest" href="/manifest.json">
-    <link rel="favicon" href="/pwa.jpg">
+    <link rel="favicon" href="static/pwa.jpg">
   </head>
   <body>
-    <img src="/pwa.jpg" width="200" alt="">
-    <h1>PWA Demo</h1>
+    <img src="static/pwa.jpg" width="200" alt="">
+    <h1>הדגמה של PWA</h1>
     <p>This is the demo site we’ll be using to test out our PWA skills.
-    <p><a href="/page-2.html">Page 2</a></p>
+    <p><a href="/page-2.html">עמוד 2</a></p>
 
-    <script src="/js/main.js"></script>
+    <script>
+    (function(){
+		  if ( "serviceWorker" in navigator ){				navigator.serviceWorker.register( "/serviceworker.js" );
+			  }
+		}());
+    </script>
   </body>
 </html>
