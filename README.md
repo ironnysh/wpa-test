@@ -7,3 +7,5 @@ The `main` branch has not been turned into a PWA.
 The `final` branch is an example of how it could be a PWA.
 
 [Presentation / tutorial](https://noti.st/aarongustafson/UoYFSo)
+
+[MDN](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
